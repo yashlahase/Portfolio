@@ -56,6 +56,7 @@ const App = () => {
      
       <Navbar />
       <Hero />
+      <About />
     </div>
   );
 };
