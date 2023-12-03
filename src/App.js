@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './style.css';
+import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 
 const App = () => {
@@ -52,7 +53,8 @@ const App = () => {
         }}
       />
 
-      {/* Only Hero Component */}
+     
+      <Navbar />
       <Hero />
     </div>
   );
