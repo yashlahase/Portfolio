@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import './style.css';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import About from './components/About';
+import Projects from './components/Projects';
+import Skills from './components/Skills';
 
 const App = () => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -20,7 +23,7 @@ const App = () => {
 
     document.addEventListener('mousemove', handleMouseMove);
 
-    const interactiveElements = document.querySelectorAll('button, a');
+    const interactiveElements = document.querySelectorAll('button, a, .project-card, .skill-tag, .cert-card');
     interactiveElements.forEach(el => {
       el.addEventListener('mouseenter', handleMouseEnter);
       el.addEventListener('mouseleave', handleMouseLeave);
@@ -57,6 +60,9 @@ const App = () => {
       <Navbar />
       <Hero />
       <About />
+      <Projects />
+      <Skills />
+      
     </div>
   );
 };
