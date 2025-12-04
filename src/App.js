@@ -7,6 +7,7 @@ import Projects from './components/Projects';
 import Skills from './components/Skills';
 import Certifications from './components/Certifications';
 import Robotics from './components/Robotics';
+import Education from './components/Education';
 
 const App = () => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -66,6 +67,7 @@ const App = () => {
       <Skills />
       <Certifications />
       <Robotics />
+      <Education />
       
     </div>
   );
