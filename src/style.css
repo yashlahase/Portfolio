@@ -721,3 +721,80 @@ html {
 .cert-card p {
   color: var(--text-secondary);
 }
+
+/* Robotics */
+.robotics {
+  padding: 100px 0;
+  background: linear-gradient(135deg, rgba(15, 15, 25, 0.9) 0%, rgba(10, 10, 15, 0.95) 100%);
+}
+
+.exp-card {
+  background: var(--bg-card);
+  padding: 2rem;
+  border-radius: 20px;
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  max-width: 600px;
+  margin: 0 auto;
+  transition: all 0.4s ease;
+  backdrop-filter: blur(20px);
+}
+
+.exp-card:hover {
+  border-color: var(--purple-glow);
+  box-shadow: 0 15px 40px rgba(139, 92, 246, 0.3);
+  transform: translateY(-5px);
+}
+
+.exp-icon {
+  font-size: 3rem;
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: float-rotate 4s ease-in-out infinite;
+}
+
+@keyframes float-rotate {
+  0%, 100% { transform: rotate(0deg) translateY(0px); }
+  25% { transform: rotate(5deg) translateY(-5px); }
+  50% { transform: rotate(0deg) translateY(-10px); }
+  75% { transform: rotate(-5deg) translateY(-5px); }
+}
+
+.exp-content h3 {
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.5rem;
+}
+
+.exp-content h4 {
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  font-weight: 400;
+}
+
+.exp-content ul {
+  list-style: none;
+}
+
+.exp-content li {
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+  position: relative;
+  padding-left: 1rem;
+}
+
+.exp-content li::before {
+  content: '▶';
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: absolute;
+  left: 0;
+}
