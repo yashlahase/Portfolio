@@ -9,6 +9,7 @@ import Certifications from './components/Certifications';
 import Robotics from './components/Robotics';
 import Education from './components/Education';
 import Contact from './components/Contact';
+import Footer from './components/Footer';
 
 const App = () => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -44,7 +45,6 @@ const App = () => {
 
   return (
     <div className={`app ${isLoaded ? 'loaded' : ''}`}>
-      {/* Custom Cursor */}
       <div 
         className={`cursor ${isHovering ? 'hover' : ''}`}
         style={{
@@ -59,8 +59,6 @@ const App = () => {
           top: `${cursorPos.y}px`
         }}
       />
-
-     
       <Navbar />
       <Hero />
       <About />
@@ -70,7 +68,7 @@ const App = () => {
       <Robotics />
       <Education />
       <Contact />
-      
+      <Footer />
     </div>
   );
 };
