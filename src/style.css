@@ -988,3 +988,106 @@ html {
 .projects-grid > *:nth-child(2) { animation-delay: 0.2s; }
 .projects-grid > *:nth-child(3) { animation-delay: 0.3s; }
 .projects-grid > *:nth-child(4) { animation-delay: 0.4s; }
+
+/* Parallax Effect */
+.hero {
+  transform-style: preserve-3d;
+}
+
+.particles {
+  will-change: transform;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .cursor, .cursor-trail {
+    display: none;
+  }
+  
+  * {
+    cursor: auto !important;
+  }
+  
+  .nav-links {
+    display: none;
+  }
+  
+  .hero-name {
+    font-size: 2.5rem;
+  }
+  
+  .hero-title {
+    font-size: 1.2rem;
+  }
+  
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .skills-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .skill-category-card {
+    padding: 1.5rem;
+  }
+  
+  .cert-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .exp-card {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .timeline-item {
+    padding-left: 40px;
+  }
+  
+  .about-text p {
+    padding: 1.5rem;
+  }
+  
+  .project-card {
+    padding: 1.5rem;
+  }
+  
+  .container {
+    padding: 0 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-name {
+    font-size: 2rem;
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+  }
+  
+  .btn-primary, .btn-secondary {
+    padding: 12px 20px;
+    font-size: 0.9rem;
+  }
+  
+  .project-card {
+    padding: 1rem;
+  }
+  
+  .skill-tag {
+    padding: 8px 14px;
+    font-size: 0.8rem;
+  }
+}
