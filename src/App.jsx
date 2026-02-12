@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import './style.css';
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import About from './components/About';
-import Projects from './components/Projects';
-import Skills from './components/Skills';
-import Certifications from './components/Certifications';
-import Robotics from './components/Robotics';
-import Education from './components/Education';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
+import Navbar from './components/Navbar.jsx';
+import Hero from './components/Hero.jsx';
+import About from './components/About.jsx';
+import Projects from './components/Projects.jsx';
+import Skills from './components/Skills.jsx';
+import Certifications from './components/Certifications.jsx';
+import Robotics from './components/Robotics.jsx';
+import Education from './components/Education.jsx';
+import Contact from './components/Contact.jsx';
+import Footer from './components/Footer.jsx';
 
 const App = () => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -45,14 +45,14 @@ const App = () => {
 
   return (
     <div className={`app ${isLoaded ? 'loaded' : ''}`}>
-      <div 
+      <div
         className={`cursor ${isHovering ? 'hover' : ''}`}
         style={{
           left: `${cursorPos.x}px`,
           top: `${cursorPos.y}px`
         }}
       />
-      <div 
+      <div
         className="cursor-trail"
         style={{
           left: `${cursorPos.x}px`,
