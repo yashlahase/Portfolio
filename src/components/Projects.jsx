@@ -3,6 +3,16 @@ import React from 'react';
 const Projects = () => {
   const projects = [
     {
+      title: "Job Tracker",
+      subtitle: "Full-Stack Job Application Manager",
+      date: "Jan 2026",
+      tech: ["React.js", "Node.js", "Express", "MongoDB", "Tailwind CSS", "JWT"],
+      description: "Track job applications with dashboard analytics, advanced search & filter. Secure authentication with JWT",
+      github: "https://github.com/yashlahase/Job_Tracker_.git",
+      demo: "https://job-tracker-gamma-nine.vercel.app",
+      isApk: false
+    },
+    {
       title: "QRConnect",
       subtitle: "Digital Visiting Card App",
       date: "Nov 2025",
