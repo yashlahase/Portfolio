@@ -13,6 +13,16 @@ const Projects = () => {
       isApk: false
     },
     {
+      title: "BillVision-AI",
+      subtitle: "AI-Powered Electricity Bill Analyzer",
+      date: "April 2026",
+      tech: ["Python", "Flask", "Google Gemini API", "OpenPyXL", "HTML", "CSS", "JavaScript", "Computer Vision", "Vercel"],
+      description: "Developed an AI-powered Electricity Bill Analyzer using Google Gemini 1.5 Flash (Vision) to extract structured data from electricity bill images and PDFs. Built a Flask-based backend to process uploaded documents, validate AI responses, and automate data extraction with robust JSON parsing. Automated the generation of Excel reports using OpenPyXL while preserving predefined templates and formulas.",
+      github: "#placeholder-github-billvision-ai",
+      demo: "#placeholder-demo-billvision-ai",
+      isApk: false
+    },
+    {
       title: "Job Tracker",
       subtitle: "Full-Stack Job Application Manager",
       date: "Jan 2026",
