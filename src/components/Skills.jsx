@@ -15,7 +15,22 @@ const Skills = () => {
     {
       title: "Databases & Data Tools",
       icon: "fas fa-database",
-      skills: ["MySQL", "MongoDB", "Prisma ORM", "Excel", "Git", "GitHub"]
+      skills: ["MySQL", "MongoDB", "Prisma ORM", "Excel"]
+    },
+    {
+      title: "AI / ML",
+      icon: "fas fa-robot",
+      skills: ["LLM", "Gemini API", "Computer Vision"]
+    },
+    {
+      title: "APIs & Authentication",
+      icon: "fas fa-key",
+      skills: ["API", "OAuth 2.0"]
+    },
+    {
+      title: "Cloud & DevOps",
+      icon: "fas fa-cloud",
+      skills: ["AWS", "Git", "GitHub"]
     },
     {
       title: "Core Skills",
@@ -25,7 +40,7 @@ const Skills = () => {
     {
       title: "Soft Skills",
       icon: "fas fa-users",
-      skills: ["Teamwork", "Communication", "Time Management", "Leadership"]
+      skills: ["Teamwork", "Communication", "Time Management", "Leadership", "Decision-making", "Responsibility"]
     }
   ];
 
