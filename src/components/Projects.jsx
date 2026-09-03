@@ -1,15 +1,38 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 const Projects = () => {
+  const [selectedProject, setSelectedProject] = useState(null);
+
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') {
+        setSelectedProject(null);
+      }
+    };
+
+    if (selectedProject) {
+      window.addEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = 'unset';
+    };
+  }, [selectedProject]);
+
   const projects = [
     {
       title: "Fashion-E-Commerce",
       subtitle: "Full-Stack Fashion E-Commerce",
       date: "July 2026",
       tech: ["React.js", "Node.js", "Express.js", "MongoDB", "JWT", "Tailwind CSS", "JavaScript"],
+      shortDescription: "Full-stack fashion e-commerce platform with authentication, cart, wishlist and admin dashboard.",
       description: "Developed a full-stack Fashion E-Commerce Application with features including User Authentication, Product Browsing, Wishlist, Cart Management, and Order Tracking. Implemented secure JWT Authentication, Product Search, Filtering, and a Responsive UI to enhance user experience. Developed an Admin Dashboard for managing Products, Categories, Users, and Orders, along with Analytics Support.",
-      github: "#placeholder-github-fashion-ecommerce",
-      demo: "#placeholder-demo-fashion-ecommerce",
+      github: "https://github.com/yashlahase/Fashion-E-Commerce.git",
+      demo: "https://fashion-e-commerce-tau-sage.vercel.app/",
       isApk: false
     },
     {
@@ -17,9 +40,10 @@ const Projects = () => {
       subtitle: "AI-Powered Electricity Bill Analyzer",
       date: "April 2026",
       tech: ["Python", "Flask", "Google Gemini API", "OpenPyXL", "HTML", "CSS", "JavaScript", "Computer Vision", "Vercel"],
+      shortDescription: "AI-powered electricity bill analyzer that extracts structured data from bills and PDFs.",
       description: "Developed an AI-powered Electricity Bill Analyzer using Google Gemini 1.5 Flash (Vision) to extract structured data from electricity bill images and PDFs. Built a Flask-based backend to process uploaded documents, validate AI responses, and automate data extraction with robust JSON parsing. Automated the generation of Excel reports using OpenPyXL while preserving predefined templates and formulas.",
-      github: "#placeholder-github-billvision-ai",
-      demo: "#placeholder-demo-billvision-ai",
+      github: "https://github.com/yashlahase/BillVision-AI.git",
+      demo: "https://billvision-ai.vercel.app/",
       isApk: false
     },
     {
@@ -27,7 +51,8 @@ const Projects = () => {
       subtitle: "Full-Stack Job Application Manager",
       date: "Jan 2026",
       tech: ["React.js", "Node.js", "Express", "MongoDB", "Tailwind CSS", "JWT"],
-      description: "Track job applications with dashboard analytics, advanced search & filter. Secure authentication with JWT",
+      shortDescription: "Full-stack job application management platform with analytics, search, filtering and JWT authentication.",
+      description: "Track job applications with dashboard analytics, advanced search & filter. Secure authentication with JWT.",
       github: "https://github.com/yashlahase/Job_Tracker_.git",
       demo: "https://job-tracker-gamma-nine.vercel.app",
       isApk: false
@@ -37,7 +62,8 @@ const Projects = () => {
       subtitle: "Digital Visiting Card App",
       date: "Nov 2025",
       tech: ["React Native", "JavaScript", "Expo", "AsyncStorage"],
-      description: "Generates digital visiting cards with QR. Works offline (QR scan + generate)",
+      shortDescription: "Digital visiting card application with QR code generation and offline sharing.",
+      description: "Generates digital visiting cards with QR. Works offline (QR scan + generate).",
       github: "https://github.com/yashlahase/QRConnect.git",
       demo: "https://expo.dev/artifacts/eas/n8xvuZLFhUYKQpZSBskZdr.apk",
       isApk: true
@@ -47,7 +73,8 @@ const Projects = () => {
       subtitle: "Interactive Game",
       date: "Sep 2025",
       tech: ["React.js", "JavaScript", "CSS"],
-      description: "Real-time win/draw detection. Highlight winning patterns",
+      shortDescription: "Interactive real-time Tic-Tac-Toe game with win and draw detection.",
+      description: "Real-time win/draw detection. Highlight winning patterns.",
       github: "https://github.com/yashlahase/TIC-TAC-TOE.git",
       demo: "https://tic-tac-toe-paoz.vercel.app/",
       isApk: false
@@ -57,7 +84,8 @@ const Projects = () => {
       subtitle: "Music Web App",
       date: "Apr 2025",
       tech: ["JavaScript", "CSS", "HTML"],
-      description: "Mood-based music web app. Smooth UI transitions. Motivational quotes",
+      shortDescription: "Mood-based music web application with curated songs and motivational quotes.",
+      description: "Mood-based music web app. Smooth UI transitions. Motivational quotes.",
       github: "https://github.com/yashlahase/mood.git",
       demo: "https://mood-yashlahases-projects.vercel.app/",
       isApk: false
@@ -67,7 +95,8 @@ const Projects = () => {
       subtitle: "Responsive Website",
       date: "Dec 2024",
       tech: ["HTML", "CSS"],
-      description: "Responsive website. External navigation buttons",
+      shortDescription: "Responsive guide website with training tips, running schedules and interactive navigation.",
+      description: "Responsive website with external navigation buttons, beginner-friendly training schedules, and running tips.",
       github: "https://github.com/yashlahase/runnningguide.git",
       demo: "https://runbegin.netlify.app/",
       isApk: false
@@ -86,24 +115,88 @@ const Projects = () => {
                 <span className="project-date">{project.date}</span>
               </div>
               <h4>{project.subtitle}</h4>
-              <p>{project.description}</p>
+              <p className="project-card-desc">{project.shortDescription}</p>
               <div className="tech-stack">
                 {project.tech.map((tech, i) => (
                   <span key={i} className="tech-tag">{tech}</span>
                 ))}
               </div>
               <div className="project-links">
-                <a href={project.github} className="project-btn" target="_blank" rel="noopener noreferrer">
-                  GitHub
-                </a>
-                <a href={project.demo} className="project-btn" target="_blank" rel="noopener noreferrer">
-                  {project.isApk ? "APK Download" : "Live Demo"}
-                </a>
+                <button
+                  type="button"
+                  className="project-btn view-more-btn"
+                  onClick={() => setSelectedProject(project)}
+                >
+                  View More
+                </button>
               </div>
             </div>
           ))}
         </div>
       </div>
+
+      {selectedProject && (
+        <div 
+          className="project-modal-overlay" 
+          onClick={() => setSelectedProject(null)}
+        >
+          <div 
+            className="project-modal-content" 
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button 
+              type="button"
+              className="modal-close-btn" 
+              onClick={() => setSelectedProject(null)}
+              aria-label="Close modal"
+            >
+              <i className="fas fa-times"></i>
+            </button>
+
+            <div className="modal-header">
+              <div className="modal-title-row">
+                <h3>{selectedProject.title}</h3>
+                <span className="project-date">{selectedProject.date}</span>
+              </div>
+              <h4>{selectedProject.subtitle}</h4>
+            </div>
+
+            <div className="modal-body">
+              <div className="modal-section">
+                <h5>About Project</h5>
+                <p>{selectedProject.description}</p>
+              </div>
+              <div className="modal-section">
+                <h5>Tech Stack</h5>
+                <div className="tech-stack">
+                  {selectedProject.tech.map((tech, i) => (
+                    <span key={i} className="tech-tag">{tech}</span>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <div className="modal-footer">
+              <a 
+                href={selectedProject.github} 
+                className="project-btn" 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                <i className="fab fa-github"></i> GitHub
+              </a>
+              <a 
+                href={selectedProject.demo} 
+                className="project-btn" 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                <i className={selectedProject.isApk ? "fas fa-download" : "fas fa-external-link-alt"}></i> {selectedProject.isApk ? "APK Download" : "Live Demo"}
+              </a>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 };
