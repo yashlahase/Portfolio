@@ -23,23 +23,20 @@ const App = () => {
       setCursorPos({ x: e.clientX, y: e.clientY });
     };
 
-    const handleMouseEnter = () => setIsHovering(true);
-    const handleMouseLeave = () => setIsHovering(false);
+    const handleMouseOver = (e) => {
+      if (e.target.closest('button, a, .project-card, .skill-tag, .cert-card, .modal-close-btn')) {
+        setIsHovering(true);
+      } else {
+        setIsHovering(false);
+      }
+    };
 
     document.addEventListener('mousemove', handleMouseMove);
-
-    const interactiveElements = document.querySelectorAll('button, a, .project-card, .skill-tag, .cert-card');
-    interactiveElements.forEach(el => {
-      el.addEventListener('mouseenter', handleMouseEnter);
-      el.addEventListener('mouseleave', handleMouseLeave);
-    });
+    document.addEventListener('mouseover', handleMouseOver);
 
     return () => {
       document.removeEventListener('mousemove', handleMouseMove);
-      interactiveElements.forEach(el => {
-        el.removeEventListener('mouseenter', handleMouseEnter);
-        el.removeEventListener('mouseleave', handleMouseLeave);
-      });
+      document.removeEventListener('mouseover', handleMouseOver);
     };
   }, []);
 
