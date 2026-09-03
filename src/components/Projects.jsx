@@ -3,6 +3,16 @@ import React from 'react';
 const Projects = () => {
   const projects = [
     {
+      title: "Fashion-E-Commerce",
+      subtitle: "Full-Stack Fashion E-Commerce",
+      date: "July 2026",
+      tech: ["React.js", "Node.js", "Express.js", "MongoDB", "JWT", "Tailwind CSS", "JavaScript"],
+      description: "Developed a full-stack Fashion E-Commerce Application with features including User Authentication, Product Browsing, Wishlist, Cart Management, and Order Tracking. Implemented secure JWT Authentication, Product Search, Filtering, and a Responsive UI to enhance user experience. Developed an Admin Dashboard for managing Products, Categories, Users, and Orders, along with Analytics Support.",
+      github: "#placeholder-github-fashion-ecommerce",
+      demo: "#placeholder-demo-fashion-ecommerce",
+      isApk: false
+    },
+    {
       title: "Job Tracker",
       subtitle: "Full-Stack Job Application Manager",
       date: "Jan 2026",
