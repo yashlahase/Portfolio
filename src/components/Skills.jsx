@@ -5,17 +5,17 @@ const Skills = () => {
     {
       title: "Programming Languages",
       icon: "fas fa-code",
-      skills: ["JavaScript", "Python", "HTML5", "CSS3"]
+      skills: ["JavaScript", "Python", "TypeScript", "HTML5", "CSS3", "SQL"]
     },
     {
       title: "Frameworks & Libraries",
       icon: "fas fa-layer-group",
-      skills: ["React", "React Native", "Node.js", "Express.js"]
+      skills: ["React", "React Native", "Node.js", "Express.js", "FastAPI"]
     },
     {
-      title: "Database & Tools",
+      title: "Databases & Data Tools",
       icon: "fas fa-database",
-      skills: ["MySQL", "Prisma ORM", "Git", "GitHub"]
+      skills: ["MySQL", "MongoDB", "Prisma ORM", "Excel", "Git", "GitHub"]
     },
     {
       title: "Core Skills",
