@@ -8,9 +8,10 @@ const About = () => {
         <div className="about-content">
           <div className="about-text">
             <p>
-              Web developer skilled in Python, JavaScript, React, and SQL with experience building 
-              responsive applications. Strong in problem-solving, DSA, and robotics, with 150+ 
-              coding problems solved and active open-source participation.
+              I'm a Computer Science student and Web Developer with experience building responsive web applications and
+              e-commerce platforms. Currently working as a Web Development Intern, I contribute to Shopify development,
+              website customization, SEO, performance optimization, and improving user experiences. I also enjoy building
+              full-stack and AI-powered projects while continuously exploring modern web technologies.
             </p>
           </div>
         </div>
